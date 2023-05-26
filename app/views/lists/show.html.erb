@@ -1,0 +1,15 @@
+<div class="container">
+<h1><%= @list.name%></h1>
+
+<button class="btn"><%= link_to ("Voir mes listes"), lists_path%></button>
+<%= link_to ("Create a bookmark"), new_list_bookmark_path(@list) %>
+</div>
+
+<% @list.movies.each do |movie|%>
+<ul class="d-block">
+  <li><%= movie.title%>
+  <img src="<%= movie.poster_url%>" alt="" class="w-25">
+  <%= movie.rating%>
+  </li>
+</ul>
+<%end%>
